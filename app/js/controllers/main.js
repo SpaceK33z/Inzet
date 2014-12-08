@@ -4,6 +4,7 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
   // Change the selected sidebar when the route parameters change.
   $scope.$on('$routeChangeSuccess', function (ev, current, prev) {
     $scope.selectedSidebar = $routeParams.term || false;
+    $scope.subjectSlug = $routeParams.subject || false;
   });
 
   $http.get('/test-terms.json').success(function(data) {

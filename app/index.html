@@ -25,15 +25,15 @@
     <div class="container">
       <div class="sidebar">
         <ul class="sidebar-list" ng-repeat="term in terms">
-          <li><a href="{{term.slug}}">{{term.name}}</a></li>
+          <li><a ng-href="{{term.slug}}" ng-class="{'active': term.slug === selectedSidebar}">{{term.name}}</a></li>
         </ul>
       </div>
       <div class="sub-sidebar" ng-show="selectedSidebar">
         <div ng-repeat="term in terms" ng-show="selectedSidebar === term.slug">
-          <a href="{{term.slug}}" class="sidebar-overview">Overzicht</a>
+          <a ng-href="{{term.slug}}" class="sidebar-overview">Overzicht</a>
 
           <ul class="sidebar-list" ng-repeat="subject in term.subjects">
-            <li><a href="{{term.slug}}/{{subject.slug}}">{{subject.name}}</a></li>
+            <li><a ng-href="{{term.slug}}/{{subject.slug}}" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">{{subject.name}}</a></li>
           </ul>
         </div>
       </div>
