@@ -1,13 +1,17 @@
 header {
   h1 {
-    margin: .5rem 0 .5rem 0;
+    margin: .5rem 0 .5rem 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 125%;
   }
 
   .account {
     align-self: center;
     margin-left: auto;
-    padding: .5em 0 .5em 0;
+    padding: .5rem 1rem;
     cursor: pointer;
+    font-size: 1rem;
 
     &:hover {
       background: #999;
