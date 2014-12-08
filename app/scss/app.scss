@@ -41,15 +41,18 @@ header {
 .sidebar {
   width: 12.5em;
   background: #f9f9f9;
+  overflow-y: scroll;
 }
 
 .sub-sidebar {
   background: #999999;
   width: 12.5em;
+  overflow-y: scroll;
 }
 
 .content {
   flex: 1;
+  overflow-y: scroll;
 }
 
 /*
@@ -57,3 +60,4 @@ header {
  */
 @import "header";
 @import "sidebar";
+@import "table";

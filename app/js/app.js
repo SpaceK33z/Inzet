@@ -4,7 +4,9 @@ var app = angular.module('inzetApp', [
   'inzetApp.controllers',
   'inzetApp.services',
   'ngRoute',
-  'ngAnimate'
+  'ngAnimate',
+  'selectize',
+  'ngTable'
 ]);
 
 app.config(function($routeProvider, $locationProvider, $httpProvider) {

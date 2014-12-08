@@ -1,1 +1,17 @@
 <h1>Subject: {{name}}</h1>
+
+<div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
+
+<table ng-table="tableParams" class="table">
+  <tr ng-repeat="user in $data">
+    <td data-title="'Naam'" sortable="'name'">
+      {{user.name}}
+    </td>
+    <td data-title="'Vrije uren'" sortable="'free_hours'">
+      {{user.free_hours}}
+    </td>
+    <td data-title="'Skills'" sortable="'skills'">
+      {{user.skills}}
+    </td>
+  </tr>
+</table>
