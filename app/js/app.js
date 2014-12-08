@@ -13,6 +13,10 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
     .when('/', {
       templateUrl: 'partials/dashboard.html',
       controller: 'DashboardCtrl'
+    })
+    .when('/subject/:query', {
+      templateUrl: 'partials/subject.html',
+      controller: 'SubjectCtrl'
     });
 
   // We don't want no fake hashbangs we want the real shite
