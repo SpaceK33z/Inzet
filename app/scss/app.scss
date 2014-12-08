@@ -28,7 +28,7 @@ header {
   width: 100%;
   background: $white;
   display: flex;
-  box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  box-shadow: $overlapping;
   position: relative;
   z-index: 2;
 }
@@ -46,18 +46,20 @@ header {
   overflow-y: scroll;
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  box-shadow: $overlapping;
 }
 
 .sub-sidebar {
   background: #f9f9f9;
   width: 12.5em;
   overflow-y: scroll;
+  box-shadow: $overlapping;
 }
 
 .content {
   flex: 1;
   overflow-y: scroll;
+  padding: 0 2rem;
 }
 
 /*
