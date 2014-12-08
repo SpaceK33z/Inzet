@@ -1,0 +1,30 @@
+[
+  {
+    "name": "P9",
+    "slug": "p9",
+    "subjects": [
+      {
+        "name": "OER1",
+        "slug": "oer1"
+      },
+      {
+        "name": "OER2",
+        "slug": "oer2"
+      }
+    ]
+  },
+  {
+    "name": "P10",
+    "slug": "p10",
+    "subjects": [
+      {
+        "name": "OER3",
+        "slug": "oer3"
+      },
+      {
+        "name": "OER4",
+        "slug": "oer4"
+      }
+    ]
+  }
+]
