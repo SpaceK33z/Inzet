@@ -1,0 +1,19 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  width: 100%;
+  max-width: 11em;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    align-self: center;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+}

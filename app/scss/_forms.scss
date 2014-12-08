@@ -1,0 +1,13 @@
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: .31em;
+  margin-bottom: 1em;
+}
+
+input[type="submit"] {
+  border: 0;
+  padding: .5em;
+  background: #ccc;
+}

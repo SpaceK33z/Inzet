@@ -1,0 +1,16 @@
+header {
+  h1 {
+    margin: .5rem 0 .5rem 0;
+  }
+
+  .account {
+    align-self: center;
+    margin-left: auto;
+    padding: .5em 0 .5em 0;
+    cursor: pointer;
+
+    &:hover {
+      background: #999;
+    }
+  }
+}

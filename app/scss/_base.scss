@@ -1,3 +1,14 @@
+// Border-box
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 ng-view {
   transition: 100ms 0 all ease;
   display: block;
