@@ -9,7 +9,7 @@
 @import "login";
 
 body {
-  background: #fff;
+  background: $white;
 }
 
 
@@ -26,16 +26,15 @@ body {
 
 header {
   width: 100%;
-  background: #fff;
+  background: $white;
   display: flex;
   box-shadow: 0 0 1rem rgba(0,0,0,.2);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .container {
   flex: 1;
-
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
@@ -45,10 +44,13 @@ header {
   width: 12.5em;
   background: #f9f9f9;
   overflow-y: scroll;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1rem rgba(0,0,0,.2);
 }
 
 .sub-sidebar {
-  background: #999999;
+  background: #f9f9f9;
   width: 12.5em;
   overflow-y: scroll;
 }
