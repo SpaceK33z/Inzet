@@ -16,7 +16,11 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
       templateUrl: 'partials/dashboard.html',
       controller: 'DashboardCtrl'
     })
-    .when('/subject/:query', {
+    .when('/:term', {
+      templateUrl: 'partials/subject.html',
+      controller: 'SubjectCtrl'
+    })
+    .when('/:term/:subject', {
       templateUrl: 'partials/subject.html',
       controller: 'SubjectCtrl'
     });

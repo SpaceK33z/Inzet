@@ -25,28 +25,38 @@
     <div class="container">
       <div class="sidebar">
         <ul class="sidebar-list">
-          <li><a href="#" ng-click="sidebar('P9')">P9</a></li>
-          <li><a href="#" ng-click="sidebar('P10')">P10</a></li>
-          <li><a href="#" ng-click="sidebar('P11')">P11</a></li>
+          <li><a href="p9">P9</a></li>
+          <li><a href="p10">P10</a></li>
+          <li><a href="p11">P11</a></li>
         </ul>
       </div>
       <div class="sub-sidebar" ng-show="selectedSidebar">
-        <a href="#" class="sidebar-overview" ng-click="sidebar(false)">Overzicht</a>
+        <div ng-show="selectedSidebar === 'p9'">
+          <a href="p9" class="sidebar-overview">Overzicht</a>
 
-        <ul class="sidebar-list" ng-show="selectedSidebar === 'P9'">
-          <li><a href="subject/OER1">P9 - OER1</a></li>
-          <li><a href="subject/OER2">P9 - OER2</a></li>
-        </ul>
+          <ul class="sidebar-list">
+            <li><a href="p9/OER1">P9 - OER1</a></li>
+            <li><a href="p9/OER2">P9 - OER2</a></li>
+          </ul>
+        </div>
 
-        <ul class="sidebar-list" ng-show="selectedSidebar === 'P10'">
-          <li><a href="subject/OER1">P10 - OER1</a></li>
-          <li><a href="subject/OER2">P10 - OER2</a></li>
-        </ul>
+        <div ng-show="selectedSidebar === 'p10'">
+          <a href="p10" class="sidebar-overview">Overzicht</a>
 
-        <ul class="sidebar-list" ng-show="selectedSidebar === 'P11'">
-          <li><a href="subject/OER1">P11 - OER1</a></li>
-          <li><a href="subject/OER2">P11 - OER2</a></li>
-        </ul>
+          <ul class="sidebar-list">
+            <li><a href="p10/OER1">P10 - OER1</a></li>
+            <li><a href="p10/OER2">P10 - OER2</a></li>
+          </ul>
+        </div>
+
+        <div ng-show="selectedSidebar === 'p11'">
+          <a href="p11" class="sidebar-overview">Overzicht</a>
+
+          <ul class="sidebar-list">
+            <li><a href="p11/OER1">P11 - OER1</a></li>
+            <li><a href="p11/OER2">P11 - OER2</a></li>
+          </ul>
+        </div>
       </div>
       <div class="content">
         <ng-view></ng-view>
