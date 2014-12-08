@@ -1,0 +1,19 @@
+ng-view {
+  transition: 100ms 0 all ease;
+  display: block;
+  opacity: 1;
+
+  &.ng-enter,
+  &.ng-leave {
+    opacity: 0;
+  }
+}
+
+// Angular stuff, probably not necessary
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
