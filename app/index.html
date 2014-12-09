@@ -32,9 +32,13 @@
         <div ng-repeat="term in terms" ng-show="selectedSidebar === term.slug">
           <ul class="sidebar-list">
             <li><a ng-href="{{term.slug}}" class="sidebar-overview">Overzicht</a></li>
-            <li ng-repeat-start="subject in term.subjects" ng-repeat-end><a ng-href="{{term.slug}}/{{subject.slug}}" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">{{subject.name}}</a></li>
+            <li ng-repeat-start="subject in term.subjects" ng-repeat-end>
+              <a ng-href="{{term.slug}}/{{subject.slug}}" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">{{subject.name}}</a>
+
+              <!-- <a href="#" ng-click="showEdit = true">E</a> -->
+            </li>
           </ul>
-          <a href="#" ng-click="showAdd = true" ng-hide="showAdd">+</a>
+          <a href="#" ng-click="showAdd = true" ng-hide="showAdd" class="sidebar-add">+</a>
 
           <form class="sidebar-edit subject-add" ng-show="showAdd">
             <a href="#" ng-click="showAdd = false">×</a>
