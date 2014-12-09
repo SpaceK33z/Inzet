@@ -26,33 +26,20 @@
 
 // .sidebar-overview {
 //   padding: .7em 1.1em;
-//   width: 100%;
-//   display: block;
-//   background: $fontyspaars;
-//   color: $white;
-//   text-decoration: none;
+//     width: 100%;
+//     display: block;
+//     text-decoration: none;
+//     color: $black;
 
-//   &:hover {
-//       background: lighten($fontyspaars, 6%);
+//     &:hover {
+//       background: #EBEBEB;
+//     }
+
+//     &:active, &.active:active {
+//       background: #BBB;
+//     }
+
+//     &.active {
+//       background: #DDD;
 //     }
 // }
-
-.sidebar-overview {
-  padding: .7em 1.1em;
-    width: 100%;
-    display: block;
-    text-decoration: none;
-    color: $black;
-
-    &:hover {
-      background: #EBEBEB;
-    }
-
-    &:active, &.active:active {
-      background: #BBB;
-    }
-
-    &.active {
-      background: #DDD;
-    }
-}
