@@ -41,19 +41,27 @@ header {
 }
 
 .sidebar {
-  width: 12.5em;
+  width: 12.5rem;
   background: #f9f9f9;
   overflow-y: scroll;
   position: relative;
   z-index: 1;
   box-shadow: $overlapping;
+
+  @media screen and (max-width: $break-small) {
+    width: 8em;
+  }
 }
 
 .sub-sidebar {
   background: #f9f9f9;
-  width: 12.5em;
+  width: 12.5rem;
   overflow-y: scroll;
   box-shadow: $overlapping;
+
+  @media screen and (max-width: $break-small) {
+    width: 8em;
+  }
 }
 
 .content {
