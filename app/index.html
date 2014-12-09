@@ -15,7 +15,7 @@
 <body>
   <div class="app" ng-controller="MainCtrl">
     <header>
-      <h1>Inzetsysteem</h1>
+      <h1><a href="/">Inzetsysteem</a></h1>
 
       <div class="account">
         <span>Judith Gaffert</span><br>
@@ -34,6 +34,21 @@
             <li><a ng-href="{{term.slug}}" class="sidebar-overview">Overzicht</a></li>
             <li ng-repeat-start="subject in term.subjects" ng-repeat-end><a ng-href="{{term.slug}}/{{subject.slug}}" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">{{subject.name}}</a></li>
           </ul>
+          <a href="#" ng-click="showAdd = true" ng-hide="showAdd">+</a>
+
+          <form class="sidebar-edit subject-add" ng-show="showAdd">
+            <a href="#" ng-click="showAdd = false">×</a>
+            <div class="field">
+              <label for="name">Naam</label>
+              <input type="text" id="name" ng-model="newSubject.name">
+            </div>
+            <div class="field">
+              <label for="description">Omschrijving</label>
+              <input type="text" id="description" ng-model="newSubject.description">
+            </div>
+
+            <input type="submit" value="Toevoegen" ng-click="addSubject($index); showAdd = false">
+          </form>
         </div>
       </div>
       <div class="content">
