@@ -34,10 +34,9 @@
             <li><a ng-href="{{term.slug}}" class="sidebar-overview" ng-class="{'active': term.slug === selectedSidebar && !subjectSlug}">Overzicht</a></li>
             <li ng-repeat-start="subject in term.subjects" ng-repeat-end><a ng-href="{{term.slug}}/{{subject.slug}}" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">{{subject.name}}</a></li>
           </ul>
-          <a href="#" ng-click="showAdd = true" ng-hide="showAdd" class="sidebar-add">+</a>
+          <a href="#" ng-click="showAdd = !showAdd" class="sidebar-add" ng-class="{'close' : showAdd}"><span>+</span></a>
 
           <form class="sidebar-edit subject-add" ng-show="showAdd">
-            <a href="#" ng-click="showAdd = false">×</a>
             <div class="field">
               <label for="name">Naam</label>
               <input type="text" id="name" ng-model="newSubject.name">
