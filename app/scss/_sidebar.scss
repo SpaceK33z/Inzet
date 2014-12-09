@@ -32,11 +32,11 @@
   font-size: 1.6rem;
   padding-top: .3rem;
   display: flex;
-  justify-content: center;
 
   span {
-    display: inline-block;
-    transition: 200ms all ease;
+    margin-left: calc(50% - .5ch);
+    display: block;
+    transition: 250ms transform, 250ms margin ease;
   }
 
   &:hover {
@@ -44,30 +44,19 @@
   }
 
   &.close {
-    justify-content: flex-end;
+    background: #EBEBEB;
 
     span {
-      transform: rotate(45deg);
+      transform: rotate(135deg);
+      margin-left: calc(100% - 1.85rem);
+    }
+
+    &:hover {
+      color: $red;
     }
   }
 }
 
-// .sidebar-overview {
-//   padding: .7em 1.1em;
-//     width: 100%;
-//     display: block;
-//     text-decoration: none;
-//     color: $black;
-
-//     &:hover {
-//       background: #EBEBEB;
-//     }
-
-//     &:active, &.active:active {
-//       background: #BBB;
-//     }
-
-//     &.active {
-//       background: #DDD;
-//     }
-// }
+.subject-add {
+  background: #EBEBEB;
+}
