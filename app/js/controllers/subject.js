@@ -14,7 +14,8 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     placeholder: 'Zoek op een vak.',
     openOnFocus: true,
     hideSelected: true,
-    selectOnTab: true
+    selectOnTab: true,
+    plugins: ['remove_button']
   };
 
   $http.get('/test-subjects1.json').success(function(data) {
