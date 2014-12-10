@@ -22,18 +22,6 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     plugins: ['remove_button']
   };
 
-  $scope.maybeAddTeacher = function(teacher) {
-    if ($scope.getTeacher(teacher.name)) {
-      // Remove teacher if exists
-      $scope.addTeacher(teacher.name);
-    }
-    else {
-      // Add box to check if it isn't an accident or something
-      $scope.showConfirm = true;
-      $scope.selectedTeacher = teacher;
-    }
-  };
-
   $scope.addTeacher = function (teacherName) {
     subjectService.addTeacher(termSlug, subjectSlug, teacherName);
   };

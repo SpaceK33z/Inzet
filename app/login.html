@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="login-wrapper">
-    <form class="login" action="/" method="POST">
+    <form class="login">
       <h1>Login</h1>
       <div class="field">
         <label for="username">Gebruikersnaam</label>
@@ -27,5 +27,14 @@
       <input type="submit" value="Login">
     </form>
   </div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script>
+    $('.login').on('submit', function(e) {
+      e.preventDefault();
+
+      window.location = '/';
+    });
+  </script>
 </body>
 </html>
