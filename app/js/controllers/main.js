@@ -14,7 +14,8 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
   // Empty subject
   $scope.newSubject = {
     name: null,
-    description: null
+    description: null,
+    hours: null
   };
 
   // Add subject to $scope.terms
@@ -24,7 +25,8 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
     $scope.terms[index].subjects.push({
       "name": $scope.newSubject.name,
       "slug": slug,
-      "description": $scope.newSubject.description
+      "description": $scope.newSubject.description,
+      "hours": $scope.newSubject.hours
     });
 
     // Empty subject data

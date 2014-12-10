@@ -38,12 +38,16 @@
 
           <form class="sidebar-edit subject-add" ng-show="showAdd">
             <div class="field">
-              <label for="name">Naam</label>
+              <label for="name">Oercode</label>
               <input type="text" id="name" ng-model="newSubject.name">
             </div>
             <div class="field">
               <label for="description">Omschrijving</label>
               <input type="text" id="description" ng-model="newSubject.description">
+            </div>
+            <div class="field">
+              <label for="hours">Uren</label>
+              <input type="number" id="hours" ng-model="newSubject.hours" min="0">
             </div>
 
             <input type="submit" value="Toevoegen" ng-click="addSubject($index); showAdd = false">
