@@ -7,6 +7,23 @@ appCtrls.controller('TermCtrl', function($scope, $route, $filter, ngTableParams,
     return teacherService.getTeacher(name);
   };
 
+  $scope.selectModel = 1;
+  $scope.selectOptions = [
+    {value: 'php32', text: 'PHP32'},
+    {value: 'ptm32', text: 'Programmeren'},
+    {value: 'mmd42', text: 'MMD42'}
+  ];
+
+  $scope.selectConfig = {
+    create: false, // Don't allow to create new tags
+    delimiter: '|',
+    placeholder: 'Zoeken',
+    openOnFocus: true,
+    hideSelected: true,
+    selectOnTab: true,
+    plugins: ['remove_button']
+  };
+
   var subjectData = subjectService.getTerm(termSlug).subjects;
 
   $scope.tableParams = new ngTableParams({
