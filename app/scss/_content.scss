@@ -1,11 +1,14 @@
 .content {
-	h1 {
-		font-size: 2rem;
-		margin-bottom: -1.5rem;
-	}
-	
-	.subtitle {
-		font-size: 1.2rem;
-		color: #666;
-	}
+  h1 {
+    font-size: 2rem;
+
+    &.has-subtitle {
+      margin-bottom: -1.5rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+  }
 }
