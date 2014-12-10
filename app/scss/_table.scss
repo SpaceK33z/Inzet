@@ -7,12 +7,16 @@ table {
 }
 
 .ng-table td {
-  padding: .4rem 0;
+  padding: .4rem .4rem;
 
   input[type="checkbox"] {
     margin: 0 auto;
     display: block;
   }
+}
+
+tr td:first-child {
+  background: white;
 }
 
 .ng-table th {
