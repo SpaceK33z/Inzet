@@ -6,7 +6,7 @@
 
 <div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
 
-<table ng-table="tableParams" class="table">
+<table ng-table="tableParams" class="table table-select">
   <tr ng-repeat="user in $data">
     <td data-title="'Naam'" sortable="'name'">
       {{user.name}}
