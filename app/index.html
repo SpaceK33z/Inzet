@@ -42,8 +42,8 @@
             </li>
             <li ng-repeat-start="subject in term.subjects" ng-repeat-end>
               <div class="clickable" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">
-                <a ng-href="{{term.slug}}/{{subject.slug}}">{{subject.name}}</a>
-                <a href="#" class="close" ng-click="editForm(subject.slug)">E</a>
+                <a ng-href="{{term.slug}}/{{subject.slug}}" ng-hide="showEdit === subject.slug">{{subject.name}}</a>
+                <a href="#" class="close" ng-click="editForm(subject.slug)" ng-hide="showEdit === subject.slug"></a>
               </div>
 
               <form class="sidebar-edit subject-edit" ng-show="showEdit === subject.slug">
