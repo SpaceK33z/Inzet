@@ -15,7 +15,7 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
   $scope.selectConfig = {
     create: false, // Don't allow to create new tags
     delimiter: '|',
-    placeholder: 'Zoek op een vak.',
+    placeholder: 'Zoeken',
     openOnFocus: true,
     hideSelected: true,
     selectOnTab: true,

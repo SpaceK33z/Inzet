@@ -1,7 +1,6 @@
 <h1>{{subject.name}}</h1>
 <p>
-  Beschrijving: {{subject.description}}<br>
-  Uren: {{subject.hours}}
+  <span class="subtitle">{{subject.description}} &ndash; {{subject.hours}} uur</span>
 </p>
 
 <div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
