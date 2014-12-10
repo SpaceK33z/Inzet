@@ -3,24 +3,37 @@
   padding: 0;
   list-style: none;
 
+  li {
+
+    .clickable {
+      display: flex;
+      flex-flow: row no-wrap;
+
+      &:hover {
+        background: #EBEBEB;
+      }
+
+      &.active {
+        background: #DDD;
+      }
+
+      &:active {
+        background: #BBB;
+      }
+    }
+  }
+
   a {
     padding: .7em 1.1em;
     width: 100%;
     display: block;
     text-decoration: none;
     color: $black;
+    flex: 1;
+  }
 
-    &:hover {
-      background: #EBEBEB;
-    }
-
-    &:active, &.active:active {
-      background: #BBB;
-    }
-
-    &.active {
-      background: #DDD;
-    }
+  .close {
+    flex: 0;
   }
 }
 
@@ -56,7 +69,7 @@
   }
 }
 
-.subject-add {
+.sidebar-edit {
   background: #EBEBEB;
   padding: 1rem;
   margin-top: -3.2rem;
@@ -64,6 +77,6 @@
   flex-direction: column;
 
   input[type="submit"] {
-    self-align: flex-end;
+    align-self: flex-end;
   }
 }

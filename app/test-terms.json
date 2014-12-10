@@ -4,12 +4,16 @@
     "slug": "p9",
     "subjects": [
       {
-        "name": "OER1",
-        "slug": "oer1"
+        "name": "PHP32",
+        "slug": "php32",
+        "description": "Programmeren",
+        "hours": 500
       },
       {
-        "name": "OER2",
-        "slug": "oer2"
+        "name": "MMD32",
+        "slug": "mmd32",
+        "description": "Moving Media Design",
+        "hours": 100
       }
     ]
   },
@@ -18,12 +22,16 @@
     "slug": "p10",
     "subjects": [
       {
-        "name": "OER3",
-        "slug": "oer3"
+        "name": "PHP32",
+        "slug": "php32",
+        "description": "Programmeren",
+        "hours": 300
       },
       {
-        "name": "OER4",
-        "slug": "oer4"
+        "name": "WD32",
+        "slug": "wd32",
+        "description": "Web Design",
+        "hours": 200
       }
     ]
   }

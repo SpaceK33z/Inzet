@@ -11,6 +11,9 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
     $scope.terms = payload;
   });
 
+  $scope.showAdd = false;
+  $scope.showEdit = false;
+
   // Empty subject
   $scope.newSubject = {
     name: null,
@@ -28,5 +31,26 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
 
     // Empty subject data
     $scope.newSubject = {};
+  };
+
+  $scope.addForm = function() {
+    if ($scope.showAdd === false) {
+      $scope.showAdd = true;
+      $scope.showEdit = false;
+    }
+    else {
+      $scope.showAdd = false;
+    }
+  };
+
+  $scope.editForm = function(slug) {
+    // Check if the item was already visible
+    if ($scope.showEdit === slug) {
+      $scope.showEdit = false;
+    }
+    else {
+      $scope.showEdit = slug;
+      $scope.showAdd = false;
+    }
   };
 });
