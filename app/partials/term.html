@@ -1,1 +1,20 @@
-<h1>Overzicht</h1>
+<h1>Overzicht van {{term}}</h1>
+
+<div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
+
+<table ng-table="tableParams" class="table">
+  <tr ng-repeat="subject in $data">
+    <td data-title="'Vak'" sortable="'name'">
+      {{subject.name}}
+    </td>
+    <td data-title="'Beschrijving'" sortable="'description'">
+      {{subject.description}}
+    </td>
+    <td data-title="'Docenten'">
+      Docentje
+    </td>
+    <td data-title="'Uren'" sortable="'hours'">
+      {{subject.hours}}
+    </td>
+  </tr>
+</table>

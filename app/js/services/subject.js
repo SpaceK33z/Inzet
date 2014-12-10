@@ -12,6 +12,17 @@ appServices.factory('subjectService', function($http, $q) {
     getTerms: function () {
       return deferred.promise;
     },
+    getTerm: function(termSlug) {
+      var output;
+
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          output = term;
+        }
+      });
+
+      return output;
+    },
     newSubject: function(index, data) {
       var slug = data.name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 
