@@ -33,6 +33,8 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
 
     // Empty subject data
     $scope.newSubject = {};
+
+    $scope.showAdd = false;
   };
 
   $scope.addForm = function() {
@@ -54,5 +56,9 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
       $scope.showEdit = slug;
       $scope.showAdd = false;
     }
+  };
+
+  $scope.removeSubject = function(term, subject) {
+    subjectService.deleteSubject(term, subject);
   };
 });

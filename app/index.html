@@ -60,6 +60,8 @@
                   <input type="number" id="hours" ng-model="subject.hours" min="0">
                 </div>
 
+                <a href="#" ng-click="removeSubject(term.slug, subject)">Verwijderen</a>
+
                 <input type="submit" value="Opslaan" ng-click="editForm(subject.slug)">
               </form>
             </li>
@@ -82,7 +84,7 @@
               <input type="number" id="hours" ng-model="newSubject.hours" min="0">
             </div>
 
-            <input type="submit" value="Toevoegen" ng-click="addSubject($index); showAdd = false">
+            <input type="submit" value="Toevoegen" ng-click="addSubject($index)">
           </form>
         </div>
       </div>

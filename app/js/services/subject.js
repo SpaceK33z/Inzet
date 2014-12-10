@@ -50,6 +50,14 @@ appServices.factory('subjectService', function($http, $q) {
 
       return output;
     },
+    deleteSubject: function(termSlug, subject) {
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          var subjectIndex = term.subjects.indexOf(subject);
+          term.subjects.splice(subjectIndex, 1);
+        }
+      });
+    },
     addTeacher: function(termSlug, subjectSlug, teacherName) {
       subjectData.forEach(function(term) {
         if (term.slug === termSlug) {
