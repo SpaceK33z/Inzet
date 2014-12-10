@@ -149,7 +149,15 @@ table {
 }
 
 .table-select {
-  tr:hover {
+  tr {
     cursor: pointer;
+
+    &:hover {
+      background: #EBEBEB;
+    }
+
+    &.active {
+      background: #ccc;
+    }
   }
 }

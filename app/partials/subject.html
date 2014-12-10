@@ -7,7 +7,10 @@
 <div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
 
 <table ng-table="tableParams" class="table table-select">
-  <tr ng-repeat="user in $data">
+  <tr ng-repeat="user in $data" ng-click="maybeAddTeacher(user)" ng-class="{'active': getTeacher(user.name)}">
+    <td>
+      <input type="checkbox" ng-checked="getTeacher(user.name)">
+    </td>
     <td data-title="'Naam'" sortable="'name'">
       {{user.name}}
     </td>
@@ -19,3 +22,10 @@
     </td>
   </tr>
 </table>
+
+<div ng-show="showConfirm">
+  <p>
+    U hebt gekozen voor: {{selectedTeacher.name}}. Deze persoon heeft {{selectedTeacher.free_hours}} uren beschikbaar en heeft de volgende skills: <em>{{selectedTeacher.skills}}</em>
+  </p>
+  <a href="#" ng-click="addTeacher(selectedTeacher.name); showConfirm = false">Toevoegen</a>
+</div>

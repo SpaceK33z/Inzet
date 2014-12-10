@@ -7,13 +7,15 @@
         "name": "PHP32",
         "slug": "php32",
         "description": "Programmeren",
-        "hours": 500
+        "hours": 500,
+        "teachers": ["Judith Gaffert"]
       },
       {
         "name": "MMD32",
         "slug": "mmd32",
         "description": "Moving Media Design",
-        "hours": 100
+        "hours": 100,
+        "teachers": []
       }
     ]
   },
@@ -25,13 +27,15 @@
         "name": "PHP32",
         "slug": "php32",
         "description": "Programmeren",
-        "hours": 300
+        "hours": 300,
+        "teachers": []
       },
       {
         "name": "WD32",
         "slug": "wd32",
         "description": "Web Design",
-        "hours": 200
+        "hours": 200,
+        "teachers": []
       }
     ]
   }

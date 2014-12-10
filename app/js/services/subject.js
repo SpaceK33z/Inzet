@@ -37,6 +37,46 @@ appServices.factory('subjectService', function($http, $q) {
       });
 
       return output;
+    },
+    addTeacher: function(termSlug, subjectSlug, teacherName) {
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          term.subjects.forEach(function(subject) {
+            if (subject.slug === subjectSlug) {
+              var teacherIndex = subject.teachers.indexOf(teacherName);
+
+              if (teacherIndex == -1) {
+                // Teacher isn't added yet
+                subject.teachers.push(teacherName);
+              }
+              else {
+                // Teacher exists, so remove
+                subject.teachers.splice(teacherIndex, 1);
+              }
+            }
+          });
+        }
+      });
+    },
+    getTeacher: function(termSlug, subjectSlug, teacherName) {
+      var output;
+
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          term.subjects.forEach(function(subject) {
+            if (subject.slug === subjectSlug) {
+              if (subject.teachers.indexOf(teacherName) > -1) {
+                output = true;
+              }
+              else {
+                output = false;
+              }
+            }
+          });
+        }
+      });
+
+      return output;
     }
   };
 });

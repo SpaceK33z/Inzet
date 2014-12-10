@@ -1,6 +1,9 @@
 appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService) {
-  $scope.subject = subjectService.getSubject($route.current.params.term, $route.current.params.subject);
-  console.log($scope.subject);
+  var termSlug = $route.current.params.term,
+    subjectSlug = $route.current.params.subject;
+
+  $scope.subject = subjectService.getSubject(termSlug, subjectSlug);
+
 
   $scope.selectModel = 1;
   $scope.selectOptions = [
@@ -17,6 +20,26 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     hideSelected: true,
     selectOnTab: true,
     plugins: ['remove_button']
+  };
+
+  $scope.maybeAddTeacher = function(teacher) {
+    if ($scope.getTeacher(teacher.name)) {
+      // Remove teacher if exists
+      $scope.addTeacher(teacher.name);
+    }
+    else {
+      // Add box to check if it isn't an accident or something
+      $scope.showConfirm = true;
+      $scope.selectedTeacher = teacher;
+    }
+  };
+
+  $scope.addTeacher = function (teacherName) {
+    subjectService.addTeacher(termSlug, subjectSlug, teacherName);
+  };
+
+  $scope.getTeacher = function (teacherName) {
+    return subjectService.getTeacher(termSlug, subjectSlug, teacherName);
   };
 
   $http.get('/test-subjects1.json').success(function(data) {
