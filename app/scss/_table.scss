@@ -147,3 +147,9 @@ table {
     display: block;
   }
 }
+
+.table-select {
+  tr:hover {
+    cursor: pointer;
+  }
+}
