@@ -8,6 +8,7 @@ appCtrls.controller('TermCtrl', function($scope, $route, $filter, ngTableParams,
   };
 
   var subjectData = subjectService.getTerm(termSlug).subjects;
+
   $scope.tableParams = new ngTableParams({
     count: subjectData.length,
     sorting: {
