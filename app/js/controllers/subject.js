@@ -1,4 +1,4 @@
-appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService) {
+appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService, teacherService) {
   var termSlug = $route.current.params.term,
     subjectSlug = $route.current.params.subject;
 
@@ -42,16 +42,16 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     return subjectService.getTeacher(termSlug, subjectSlug, teacherName);
   };
 
-  $http.get('/test-subjects1.json').success(function(data) {
+  teacherService.getTeachers().then(function(payload) {
     $scope.tableParams = new ngTableParams({
-      count: data.length,
+      count: payload.length,
       sorting: {
         name: 'asc'
       }
     }, {
-      total: data.length, // length of data
+      total: payload.length, // length of data
       getData: function($defer, params, $http) {
-          var orderedData = params.sorting() ? $filter('orderBy')(data, params.orderBy()) : data;
+          var orderedData = params.sorting() ? $filter('orderBy')(payload, params.orderBy()) : payload;
 
           $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
       }

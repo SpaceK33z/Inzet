@@ -30,7 +30,8 @@ appServices.factory('subjectService', function($http, $q) {
         name: data.name,
         slug: slug,
         description: data.description,
-        hours: data.hours
+        hours: data.hours,
+        teachers: []
       });
     },
     getSubject: function(termSlug, subjectSlug) {

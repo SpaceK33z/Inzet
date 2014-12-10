@@ -5,13 +5,17 @@
 <table ng-table="tableParams" class="table">
   <tr ng-repeat="subject in $data">
     <td data-title="'Vak'" sortable="'name'">
-      {{subject.name}}
+      <a href="/{{term}}/{{subject.slug}}">
+        {{subject.name}}
+      </a>
     </td>
     <td data-title="'Beschrijving'" sortable="'description'">
       {{subject.description}}
     </td>
     <td data-title="'Docenten'">
-      Docentje
+      <div  ng-repeat="teacher in subject.teachers" ng-init="teacherData = getTeacher(teacher)">
+        {{teacher}} ({{teacherData.free_hours}})
+      </div>
     </td>
     <td data-title="'Uren'" sortable="'hours'">
       {{subject.hours}}

@@ -1,7 +1,11 @@
-appCtrls.controller('TermCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService) {
+appCtrls.controller('TermCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService, teacherService) {
   var termSlug = $route.current.params.term;
 
   $scope.term = termSlug;
+
+  $scope.getTeacher = function(name) {
+    return teacherService.getTeacher(name);
+  };
 
   var subjectData = subjectService.getTerm(termSlug).subjects;
   $scope.tableParams = new ngTableParams({
