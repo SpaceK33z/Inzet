@@ -1,4 +1,4 @@
-appCtrls.controller('MainCtrl', function($scope, userService, $location, $route, $routeParams, $http) {
+appCtrls.controller('MainCtrl', function($scope, userService, $location, $route, $routeParams, $http, subjectService) {
   $scope.username = userService.getName() || 'Bart';
 
   // Change the selected sidebar when the route parameters change.
@@ -7,8 +7,8 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
     $scope.subjectSlug = $routeParams.subject || false;
   });
 
-  $http.get('/test-terms.json').success(function(data) {
-    $scope.terms = data;
+  subjectService.getTerms().then(function(payload) {
+    $scope.terms = payload;
   });
 
   // Empty subject
@@ -20,13 +20,10 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
 
   // Add subject to $scope.terms
   $scope.addSubject = function (index) {
-    var slug = $scope.newSubject.name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
-
-    $scope.terms[index].subjects.push({
-      "name": $scope.newSubject.name,
-      "slug": slug,
-      "description": $scope.newSubject.description,
-      "hours": $scope.newSubject.hours
+    subjectService.newSubject(index, {
+      name: $scope.newSubject.name,
+      description: $scope.newSubject.description,
+      hours: $scope.newSubject.hours
     });
 
     // Empty subject data

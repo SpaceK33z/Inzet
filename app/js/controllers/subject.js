@@ -1,5 +1,6 @@
-appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTableParams, $http) {
-  $scope.name = $route.current.params.subject || $route.current.params.term;
+appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService) {
+  $scope.subject = subjectService.getSubject($route.current.params.term, $route.current.params.subject);
+  console.log($scope.subject);
 
   $scope.selectModel = 1;
   $scope.selectOptions = [
