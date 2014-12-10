@@ -9,7 +9,7 @@
 <table ng-table="tableParams" class="table table-select">
   <tr ng-repeat="user in $data" ng-click="maybeAddTeacher(user)" ng-class="{'active': getTeacher(user.name)}">
     <td>
-      <input type="checkbox" ng-checked="getTeacher(user.name)">
+      <input type="checkbox" disabled ng-checked="getTeacher(user.name)">
     </td>
     <td data-title="'Naam'" sortable="'name'">
       {{user.name}}
