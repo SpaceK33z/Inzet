@@ -11,12 +11,11 @@ html {
 }
 
 ng-view {
-  transition: 70ms 0 all ease;
+  transition: 100ms all ease-out;
   display: block;
   opacity: 1;
 
-  &.ng-enter,
-  &.ng-leave {
+  &.ng-enter, &.ng-leave {
     opacity: 0;
   }
 }
