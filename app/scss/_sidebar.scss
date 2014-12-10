@@ -30,10 +30,25 @@
     text-decoration: none;
     color: $black;
     flex: 1;
+
+    &.ng-hide {
+      display: block !important;
+      visibility: hidden;
+    }
   }
 
   .close {
     flex: 0;
+    padding-right: 1.5rem;
+    position: relative;
+    z-index: 1;
+    background: url('/img/pencil.svg') no-repeat center center;
+
+    &.ng-hide {
+      display: block !important;
+      visibility: visible;
+      background-image: url('/img/pencil-coloured.svg');
+    }
   }
 }
 
@@ -71,12 +86,13 @@
 
 .sidebar-edit {
   background: #EBEBEB;
-  padding: 1rem;
-  margin-top: -3.2rem;
+  padding: 0.7rem 1rem 1rem;
+  margin-top: -2.8rem;
   display: flex;
   flex-direction: column;
 
   input[type="submit"] {
     align-self: flex-end;
   }
+
 }
