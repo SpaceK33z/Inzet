@@ -60,9 +60,13 @@
                   <input type="number" id="hours" ng-model="subject.hours" min="0">
                 </div>
 
-                <a href="#" ng-click="removeSubject(term.slug, subject)">Verwijderen</a>
+                <!-- <div class="editcontrols"> -->
+                  <!-- <a href="#" class="delete" ng-click="removeSubject(term.slug, subject)">-</a>
+ -->
+                  <input type="button" value="Verwijderen" ng-click="removeSubject(term.slug, subject)">
 
-                <input type="submit" value="Opslaan" ng-click="editForm(subject.slug)">
+                  <input type="submit" value="Opslaan" ng-click="editForm(subject.slug)">
+                <!-- </div> -->
               </form>
             </li>
           </ul>
