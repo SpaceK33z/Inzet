@@ -1,0 +1,16 @@
+.dashboard {
+	.button {
+		background: $blue;
+		color: $white;
+		text-align: center;
+		display: block;
+		padding: .35rem .5rem;
+
+		&:hover {
+			background: tint($blue, 12%);
+		}
+		&:active {
+			background: shade($blue, 20%);
+		}
+	}
+}

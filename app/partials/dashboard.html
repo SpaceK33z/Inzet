@@ -1,6 +1,6 @@
 <h1>To-Do</h1>
 
-<div ng-repeat="term in terms">
+<div ng-repeat="term in terms" class="dashboard">
   <h2>{{term.name}}</h2>
 
   <table ng-table="tableParams(term.slug)" class="table table-select">
@@ -15,17 +15,17 @@
           {{teacher.name}}
         </div>
         <div ng-if="!subject.teachers.length">
-          <a href="/{{term.slug}}/{{subject.slug}}">Kies een docent</a>
+          <a href="/{{term.slug}}/{{subject.slug}}" class="button">Kies een docent</a>
         </div>
       </td>
       <td data-title="'Uren'">
         <div ng-repeat="teacher in subject.teachers">
           <span ng-if="teacher.hours === 0">
-            <a href="/{{term.slug}}/{{subject.slug}}">Deel uren in</a>
+            <a href="/{{term.slug}}/{{subject.slug}}" class="button">Deel uren in</a>
           </span>
         </div>
         <div ng-if="!subject.teachers.length">
-          <a href="/{{term.slug}}/{{subject.slug}}">Deel uren in</a>
+          <a href="/{{term.slug}}/{{subject.slug}}" class="button">Deel uren in</a>
         </div>
       </td>
     </tr>
