@@ -30,6 +30,7 @@
     text-decoration: none;
     color: $black;
     flex: 1;
+    min-height: 2.8em;
 
     &.ng-hide {
       display: block !important;
