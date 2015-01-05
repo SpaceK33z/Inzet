@@ -16,6 +16,14 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
       templateUrl: 'partials/dashboard.html',
       controller: 'DashboardCtrl'
     })
+    // wow many nasty
+    .when('/login.html', {
+      templateUrl: '',
+      controller: function($location) {
+        var path = $location.path();
+        window.location = path;
+      }
+    })
     .when('/:term', {
       templateUrl: 'partials/term.html',
       controller: 'TermCtrl'
