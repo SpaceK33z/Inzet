@@ -58,7 +58,7 @@
               <form class="sidebar-edit subject-edit" ng-show="showEdit === subject.slug">
                 <div class="field">
                   <label for="name">Oercode</label>
-                  <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions" ng-model="subject.name">
+                  <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions(term.slug)" ng-model="subject.name">
                 </div>
                 <div class="field">
                   <label for="description">Omschrijving</label>
@@ -82,7 +82,7 @@
           <form class="sidebar-edit subject-add" ng-show="showAdd === true">
             <div class="field">
               <label for="name">Oercode</label>
-              <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions" ng-model="newSubject.name">
+              <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions(term.slug)" ng-model="newSubject.name">
             </div>
             <div class="field">
               <label for="description">Omschrijving</label>
@@ -119,6 +119,7 @@
   <script src="js/services/user.js"></script>
   <script src="js/services/subject.js"></script>
   <script src="js/services/teacher.js"></script>
+  <script src="js/services/oer.js"></script>
   <!-- endbuild -->
 </body>
 </html>

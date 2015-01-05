@@ -1,4 +1,4 @@
-appServices.factory('subjectService', function($http, $q) {
+appServices.factory('subjectService', function($http, $q, oerService) {
   var subjectData = [];
 
   var deferred = $q.defer();
@@ -140,6 +140,29 @@ appServices.factory('subjectService', function($http, $q) {
           });
         }
       });
+
+      return output;
+    },
+    getOers: function(termSlug) {
+      var output = [];
+      var usedSubjects = [];
+
+      // subjectData.forEach(function(term) {
+      //   if (term.slug === termSlug) {
+      //     term.subjects.forEach(function(subject) {
+      //       usedSubjects.push(subject.name);
+      //     });
+      //   }
+      // });
+
+      // oerService.getOers().forEach(function(oer) {
+      //   if (usedSubjects.indexOf(oer.value) === -1) {
+      //     console.log('hiii');
+      //     output.push(oer);
+      //   }
+      // });
+      //
+      output = oerService.getOers();
 
       return output;
     }

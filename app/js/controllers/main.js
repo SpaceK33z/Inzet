@@ -1,4 +1,4 @@
-appCtrls.controller('MainCtrl', function($scope, userService, $location, $route, $routeParams, $http, subjectService, teacherService) {
+appCtrls.controller('MainCtrl', function($scope, userService, $location, $route, $routeParams, $http, subjectService, teacherService, oerService) {
   $scope.username = userService.getName() || 'Bart';
   $scope.locationPath = $location.path();
 
@@ -66,15 +66,9 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
     subjectService.deleteSubject(term, subject);
   };
 
-  $scope.subjectOptions = [{
-    "value": "PHP32"
-  }, {
-    "value": "MMD32"
-  }, {
-    "value": "IMS42"
-  }, {
-    "value": "PTM42"
-  }];
+  $scope.subjectOptions = function (termSlug) {
+    return subjectService.getOers(termSlug);
+  };
 
   $scope.subjectConfig = {
     options: $scope.subjectOptions,
