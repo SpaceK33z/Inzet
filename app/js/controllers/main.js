@@ -26,7 +26,7 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
   // Add subject to $scope.terms
   $scope.addSubject = function (index) {
     subjectService.newSubject(index, {
-      name: $scope.newSubject.name,
+      name: $scope.newSubject.name[0],
       description: $scope.newSubject.description,
       hours: $scope.newSubject.hours
     });
@@ -60,5 +60,26 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
 
   $scope.removeSubject = function(term, subject) {
     subjectService.deleteSubject(term, subject);
+  };
+
+  $scope.subjectOptions = [{
+    "value": "PHP32"
+  }, {
+    "value": "MMD32"
+  }, {
+    "value": "IMS42"
+  }, {
+    "value": "PTM42"
+  }];
+
+  $scope.subjectConfig = {
+    options: $scope.subjectOptions,
+    create: false, // Don't allow to create new tags
+    openOnFocus: true,
+    selectOnTab: true,
+    valueField: 'value',
+    labelField: 'value',
+    searchField: ['value'],
+    maxItems: 1
   };
 });

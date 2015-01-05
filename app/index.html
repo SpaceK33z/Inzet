@@ -42,14 +42,14 @@
             </li>
             <li ng-repeat-start="subject in term.subjects" ng-repeat-end>
               <div class="clickable" ng-class="{'active': term.slug === selectedSidebar && subject.slug === subjectSlug}">
-                <a ng-href="{{term.slug}}/{{subject.slug}}" ng-hide="showEdit === subject.slug">{{subject.name}}</a>
+                <a ng-href="{{term.slug}}/{{subject.slug}}" ng-hide="showEdit === subject.slug">{{subject.name[0]}}</a>
                 <a href="#" class="close" ng-click="editForm(subject.slug)" ng-hide="showEdit === subject.slug"></a>
               </div>
 
               <form class="sidebar-edit subject-edit" ng-show="showEdit === subject.slug">
                 <div class="field">
                   <label for="name">Oercode</label>
-                  <input type="text" id="name" ng-model="subject.name">
+                  <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions" ng-model="subject.name">
                 </div>
                 <div class="field">
                   <label for="description">Omschrijving</label>
@@ -77,7 +77,7 @@
           <form class="sidebar-edit subject-add" ng-show="showAdd === true">
             <div class="field">
               <label for="name">Oercode</label>
-              <input type="text" id="name" ng-model="newSubject.name">
+              <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions" ng-model="newSubject.name">
             </div>
             <div class="field">
               <label for="description">Omschrijving</label>
