@@ -4,8 +4,6 @@
   Max: {{term.hours}}
 </p>
 
-<div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
-
 <table ng-table="tableParams" class="table table-select">
   <tr ng-repeat="subject in $data">
     <td data-title="'Vak'" sortable="'name'">
@@ -17,12 +15,12 @@
       {{subject.description}}
     </td>
     <td data-title="'Docenten'">
-      <div ng-repeat="teacher in subject.teachers" ng-init="teacherData = getTeacher(teacher)">
+      <div ng-repeat="teacher in subject.teachers">
         {{teacher.name}}
       </div>
     </td>
     <td data-title="'Uren'">
-      <div ng-repeat="teacher in subject.teachers" ng-init="teacherData = getTeacher(teacher)">
+      <div ng-repeat="teacher in subject.teachers">
         {{teacher.hours}}
       </div>
     </td>

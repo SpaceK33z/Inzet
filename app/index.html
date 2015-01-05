@@ -27,8 +27,13 @@
     </header>
     <div class="container">
       <div class="sidebar">
-        <ul class="sidebar-list" ng-repeat="term in terms">
+        <ul class="sidebar-list">
           <li>
+            <div class="clickable" ng-class="{'active': locationPath === '/'}">
+              <a href="/">Dashboard</a>
+            </div>
+          </li>
+          <li ng-repeat-start="term in terms" ng-repeat-end>
             <div class="clickable" ng-class="{'active': term.slug === selectedSidebar}">
               <a ng-href="{{term.slug}}">{{term.name}}</a>
             </div>
