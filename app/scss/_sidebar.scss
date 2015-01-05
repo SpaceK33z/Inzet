@@ -14,7 +14,14 @@
       }
 
       &.active {
+        //old
         background: #DDD;
+
+        //new
+        background: $fontyspaars;
+        a {
+          color: white;
+        }
       }
 
       &:active {
