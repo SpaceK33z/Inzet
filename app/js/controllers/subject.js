@@ -3,7 +3,7 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     subjectSlug = $route.current.params.subject;
 
   $scope.subject = subjectService.getSubject(termSlug, subjectSlug);
-
+  $scope.term = subjectService.getTerm(termSlug);
 
   $scope.selectModel = 1;
   $scope.selectOptions = [
@@ -56,6 +56,10 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
 
   $scope.getFreeHours = function (teacherName) {
     return teacherService.getFreeHours(teacherName);
+  };
+
+  $scope.getHoursOfSubject = function (subjectSlugje) {
+    return subjectService.getSubjectHours(termSlug, subjectSlugje);
   };
 
 });

@@ -8,6 +8,14 @@
   Uren in periode resterend: {{getTermHoursRemaining()}}.
 </p>
 
+<div class="bar">
+  <div class="bar-fill" ng-repeat="subjectAll in term.subjects" ng-style="{'width': (getHoursOfSubject(subjectAll.slug) / term.hours) * 100 + '%'}" ng-class="{'active': subjectAll.name[0] === subject.name[0]}" ng-hide="getHoursOfSubject(subjectAll.slug) === 0">{{subjectAll.name[0]}}</div>
+</div>
+<div class="bar-numbers">
+  <div class="bar-min">0</div>
+  <div class="bar-max">{{term.hours}}</div>
+</div>
+
 <table ng-table="tableParams" class="table table-select">
   <tr ng-repeat="user in $data" ng-class="{'active': getTeacher(user.name).hours > 0, 'busy': getTeacher(user.name).hours === 0}">
     <td>

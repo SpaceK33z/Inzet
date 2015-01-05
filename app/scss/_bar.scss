@@ -1,0 +1,27 @@
+.bar {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 46px;
+  line-height: 46px;
+  display: flex;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #e0e0e0;
+  border-right: 1px solid #999;
+  align-self: center;
+  text-indent: 8px;
+  transition: .3s ease;
+
+  &.active {
+    background: $fontyspaars;
+    color: #fff;
+  }
+}
+
+.bar-numbers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
