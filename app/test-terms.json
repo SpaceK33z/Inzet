@@ -10,10 +10,10 @@
         "description": "Programmeren",
         "teachers": [{
           "name": "Judith Gaffert",
-          "hours": 200
+          "hours": 120
         }, {
           "name": "Klaassen, Jan",
-          "hours": 200
+          "hours": 50
         }]
       },
       {

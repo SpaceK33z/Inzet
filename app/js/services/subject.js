@@ -12,6 +12,9 @@ appServices.factory('subjectService', function($http, $q) {
     getTerms: function () {
       return deferred.promise;
     },
+    getTermsRealtime: function () {
+      return subjectData;
+    },
     getTerm: function(termSlug) {
       var output;
 
@@ -85,25 +88,18 @@ appServices.factory('subjectService', function($http, $q) {
       });
 
     },
-    getTeacher: function(termSlug, subjectSlug, teacherName, booltje) {
-      booltje = booltje || false;
+    getTeacher: function(termSlug, subjectSlug, teacherName) {
       var output;
 
       subjectData.forEach(function(term) {
         if (term.slug === termSlug) {
           term.subjects.forEach(function(subject) {
             if (subject.slug === subjectSlug) {
+              output = false;
+
               subject.teachers.forEach(function(teacher) {
-                if (teacher.name.indexOf(teacherName) > -1) {
-                  if (booltje) {
-                    output = true;
-                  }
-                  else {
-                    output = teacher;
-                  }
-                }
-                else {
-                  output = false;
+                if (teacher.name === teacherName) {
+                  output = teacher;
                 }
               });
             }

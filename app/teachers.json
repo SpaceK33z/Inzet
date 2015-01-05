@@ -1,18 +1,18 @@
 [
 {
   "name": "Judith Gaffert",
-  "free_hours": "192"
+  "max_hours": "192"
 },
 {
   "name": "Kuijk, Suzanne van",
-  "free_hours": "128"
+  "max_hours": "128"
 },
 {
   "name": "Klaassen, Jan",
-  "free_hours": "340"
+  "max_hours": "340"
 },
 {
   "name":  "Dogg, Snoop",
-  "free_hours": "420"
+  "max_hours": "420"
 }
 ]
