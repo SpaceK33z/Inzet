@@ -1,7 +1,7 @@
 appCtrls.controller('TermCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService, teacherService) {
   var termSlug = $route.current.params.term;
 
-  $scope.term = termSlug;
+  $scope.term = subjectService.getTerm(termSlug);
 
   $scope.getTeacher = function(name) {
     return teacherService.getTeacher(name);
@@ -24,7 +24,7 @@ appCtrls.controller('TermCtrl', function($scope, $route, $filter, ngTableParams,
     plugins: ['remove_button']
   };
 
-  var subjectData = subjectService.getTerm(termSlug).subjects;
+  var subjectData = $scope.term.subjects;
 
   $scope.tableParams = new ngTableParams({
     count: subjectData.length,

@@ -26,8 +26,8 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     subjectService.addTeacher(termSlug, subjectSlug, teacherName);
   };
 
-  $scope.getTeacher = function (teacherName) {
-    return subjectService.getTeacher(termSlug, subjectSlug, teacherName);
+  $scope.getTeacher = function (teacherName, booltje) {
+    return subjectService.getTeacher(termSlug, subjectSlug, teacherName, booltje);
   };
 
   teacherService.getTeachers().then(function(payload) {
@@ -45,5 +45,13 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
       }
     });
   });
+
+  $scope.getTotalHours = function () {
+    return subjectService.getSubjectHours(termSlug, subjectSlug);
+  };
+
+  $scope.getTermHoursRemaining = function () {
+    return subjectService.getTermHoursRemaining(termSlug);
+  };
 
 });

@@ -1,14 +1,17 @@
 <h1 class="has-subtitle">{{subject.name[0]}}</h1>
 <p>
-  <span class="subtitle">{{subject.description}} &ndash; {{subject.hours}} uur</span>
+  <span class="subtitle">{{subject.description}}</span>
 </p>
 
-<div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
+<p>
+  Uren besteed: {{getTotalHours()}}.<br>
+  Uren in periode resterend: {{getTermHoursRemaining()}}.
+</p>
 
 <table ng-table="tableParams" class="table table-select">
-  <tr ng-repeat="user in $data" ng-class="{'active': getTeacher(user.name)}">
+  <tr ng-repeat="user in $data" ng-class="{'active': getTeacher(user.name).hours > 0, 'busy': getTeacher(user.name).hours === 0}">
     <td>
-      <input type="checkbox" ng-checked="getTeacher(user.name)" ng-click="addTeacher(user.name)">
+      <input type="checkbox" ng-checked="getTeacher(user.name, true)" ng-click="addTeacher(user.name)">
     </td>
     <td data-title="'Naam'" sortable="'name'">
       {{user.name}}
@@ -16,8 +19,8 @@
     <td data-title="'Vrije uren'" sortable="'free_hours'">
       {{user.free_hours}}
     </td>
-    <td data-title="'Skills'" sortable="'skills'">
-      {{user.skills}}
+    <td data-title="'Uren toebedeeld'">
+      <input type="number" placeholder="Uren" min="0" ng-model="getTeacher(user.name).hours">
     </td>
   </tr>
 </table>

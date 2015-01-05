@@ -13,6 +13,11 @@ table {
     margin: 0 auto;
     display: block;
   }
+
+  input[type="number"] {
+    margin: 0;
+    max-width: 100px;
+  }
 }
 
 tr td:first-child {
@@ -177,6 +182,14 @@ tr td:first-child {
 
       &:hover {
         background: lighten($green, 3%);
+      }
+    }
+
+    &.busy {
+      background: $red;
+
+      &:hover {
+        background: lighten($red, 3%);
       }
     }
   }

@@ -1,22 +1,18 @@
 [
 {
   "name": "Judith Gaffert",
-  "free_hours": "192",
-  "skills": "SLB; MMD"
+  "free_hours": "192"
 },
 {
   "name": "Kuijk, Suzanne van",
-  "free_hours": "128",
-  "skills": "PHP"
+  "free_hours": "128"
 },
 {
   "name": "Klaassen, Jan",
-  "free_hours": "340",
-  "skills": "DDM; ASD"
+  "free_hours": "340"
 },
 {
   "name":  "Dogg, Snoop",
-  "free_hours": "420",
-  "skills": "BLZ"
+  "free_hours": "420"
 }
 ]

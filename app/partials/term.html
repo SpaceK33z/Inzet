@@ -1,24 +1,30 @@
-<h1>Overzicht van <span class="uppercase">{{term}}</span></h1>
+<h1>Overzicht van <span class="uppercase">{{term.name}}</span></h1>
+
+<p>
+  Max: {{term.hours}}
+</p>
 
 <div selectize="selectConfig" options="selectOptions" ng-model="selectModel"></div>
 
 <table ng-table="tableParams" class="table table-select">
   <tr ng-repeat="subject in $data">
     <td data-title="'Vak'" sortable="'name'">
-      <a href="/{{term}}/{{subject.slug}}">
-        {{subject.name}}
+      <a href="/{{term.slug}}/{{subject.slug}}">
+        {{subject.name[0]}}
       </a>
     </td>
     <td data-title="'Beschrijving'" sortable="'description'">
       {{subject.description}}
     </td>
     <td data-title="'Docenten'">
-      <div  ng-repeat="teacher in subject.teachers" ng-init="teacherData = getTeacher(teacher)">
-        {{teacher}} ({{teacherData.free_hours}})
+      <div ng-repeat="teacher in subject.teachers" ng-init="teacherData = getTeacher(teacher)">
+        {{teacher.name}}
       </div>
     </td>
-    <td data-title="'Uren'" sortable="'hours'">
-      {{subject.hours}}
+    <td data-title="'Uren'">
+      <div ng-repeat="teacher in subject.teachers" ng-init="teacherData = getTeacher(teacher)">
+        {{teacher.hours}}
+      </div>
     </td>
   </tr>
 </table>

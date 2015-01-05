@@ -63,35 +63,84 @@ appServices.factory('subjectService', function($http, $q) {
         if (term.slug === termSlug) {
           term.subjects.forEach(function(subject) {
             if (subject.slug === subjectSlug) {
-              var teacherIndex = subject.teachers.indexOf(teacherName);
+              var found = false;
 
-              if (teacherIndex == -1) {
-                // Teacher isn't added yet
-                subject.teachers.push(teacherName);
+              for (var i = 0; i < subject.teachers.length; i++) {
+                if (subject.teachers[i].name === teacherName) {
+                  found = true;
+                  subject.teachers.splice(i, 1);
+                }
               }
-              else {
-                // Teacher exists, so remove
-                subject.teachers.splice(teacherIndex, 1);
+
+              if (!found) {
+                // Teacher isn't added yet
+                subject.teachers.push({
+                  name: teacherName,
+                  hours: 0
+                });
               }
             }
           });
         }
       });
+
     },
-    getTeacher: function(termSlug, subjectSlug, teacherName) {
+    getTeacher: function(termSlug, subjectSlug, teacherName, booltje) {
+      booltje = booltje || false;
       var output;
 
       subjectData.forEach(function(term) {
         if (term.slug === termSlug) {
           term.subjects.forEach(function(subject) {
             if (subject.slug === subjectSlug) {
-              if (subject.teachers.indexOf(teacherName) > -1) {
-                output = true;
-              }
-              else {
-                output = false;
-              }
+              subject.teachers.forEach(function(teacher) {
+                if (teacher.name.indexOf(teacherName) > -1) {
+                  if (booltje) {
+                    output = true;
+                  }
+                  else {
+                    output = teacher;
+                  }
+                }
+                else {
+                  output = false;
+                }
+              });
             }
+          });
+        }
+      });
+
+      return output;
+    },
+    getSubjectHours: function(termSlug, subjectSlug) {
+      var output = 0;
+
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          term.subjects.forEach(function(subject) {
+            if (subject.slug === subjectSlug) {
+              subject.teachers.forEach(function(teacher) {
+                output += teacher.hours;
+              });
+            }
+          });
+        }
+      });
+
+      return output;
+    },
+    getTermHoursRemaining: function(termSlug) {
+      var output = 0;
+
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          output = term.hours;
+
+          term.subjects.forEach(function(subject) {
+            subject.teachers.forEach(function(teacher) {
+              output -= teacher.hours;
+            });
           });
         }
       });

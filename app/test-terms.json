@@ -2,19 +2,24 @@
   {
     "name": "P9",
     "slug": "p9",
+    "hours": 500,
     "subjects": [
       {
         "name": "PHP32",
         "slug": "php32",
         "description": "Programmeren",
-        "hours": 500,
-        "teachers": ["Judith Gaffert"]
+        "teachers": [{
+          "name": "Judith Gaffert",
+          "hours": 200
+        }, {
+          "name": "Klaassen, Jan",
+          "hours": 200
+        }]
       },
       {
         "name": "MMD32",
         "slug": "mmd32",
         "description": "Moving Media Design",
-        "hours": 100,
         "teachers": []
       }
     ]
@@ -22,19 +27,18 @@
   {
     "name": "P10",
     "slug": "p10",
+    "hours": 300,
     "subjects": [
       {
         "name": "PHP32",
         "slug": "php32",
         "description": "Programmeren",
-        "hours": 300,
         "teachers": []
       },
       {
         "name": "WD32",
         "slug": "wd32",
         "description": "Web Design",
-        "hours": 200,
         "teachers": []
       }
     ]
