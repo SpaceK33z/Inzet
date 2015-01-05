@@ -64,10 +64,6 @@
                   <label for="description">Omschrijving</label>
                   <input type="text" id="description" ng-model="subject.description">
                 </div>
-                <div class="field">
-                  <label for="hours">Uren</label>
-                  <input type="number" id="hours" ng-model="subject.hours" min="0">
-                </div>
 
                 <!-- <div class="editcontrols"> -->
                   <!-- <a href="#" class="delete" ng-click="removeSubject(term.slug, subject)">-</a>
@@ -91,10 +87,6 @@
             <div class="field">
               <label for="description">Omschrijving</label>
               <input type="text" id="description" ng-model="newSubject.description">
-            </div>
-            <div class="field">
-              <label for="hours">Uren</label>
-              <input type="number" id="hours" ng-model="newSubject.hours" min="0">
             </div>
 
             <input type="submit" value="Toevoegen" ng-click="addSubject($index)">

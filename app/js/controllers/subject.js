@@ -58,4 +58,12 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     return subjectService.getSubjectHours(termSlug, subjectSlugje);
   };
 
+  $scope.changeHour = function (teacherName, remainingHours) {
+    var teacher = subjectService.getTeacher(termSlug, subjectSlug, teacherName);
+
+    if (remainingHours < 0) {
+      teacher.hours += parseInt(remainingHours);
+    }
+  };
+
 });
