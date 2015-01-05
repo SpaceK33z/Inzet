@@ -46,10 +46,6 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     });
   });
 
-  $scope.getTotalHours = function () {
-    return subjectService.getSubjectHours(termSlug, subjectSlug);
-  };
-
   $scope.getTermHoursRemaining = function () {
     return subjectService.getTermHoursRemaining(termSlug);
   };
