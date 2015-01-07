@@ -5,13 +5,13 @@
     "hours": 500,
     "subjects": [
       {
-        "name": "PHP32",
+        "name": ["PHP32"],
         "slug": "php32",
         "description": "Programmeren",
         "teachers": []
       },
       {
-        "name": "MMD32",
+        "name": ["MMD32"],
         "slug": "mmd32",
         "description": "Moving Media Design",
         "teachers": []
@@ -24,13 +24,13 @@
     "hours": 300,
     "subjects": [
       {
-        "name": "PHP32",
+        "name": ["PHP32"],
         "slug": "php32",
         "description": "Programmeren",
         "teachers": []
       },
       {
-        "name": "WD32",
+        "name": ["WD32"],
         "slug": "wd32",
         "description": "Web Design",
         "teachers": []

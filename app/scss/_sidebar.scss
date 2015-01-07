@@ -4,7 +4,6 @@
   list-style: none;
 
   li {
-
     .clickable {
       display: flex;
       flex-flow: row no-wrap;
@@ -14,13 +13,14 @@
       }
 
       &.active {
-        //old
-        background: #DDD;
-
-        //new
         background: $fontyspaars;
+
+        &:hover {
+          background: lighten($fontyspaars, 5%);
+        }
+
         a {
-          color: white;
+          color: #fff;
         }
       }
 

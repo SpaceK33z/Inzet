@@ -66,12 +66,8 @@ appCtrls.controller('MainCtrl', function($scope, userService, $location, $route,
     subjectService.deleteSubject(term, subject);
   };
 
-  $scope.subjectOptions = function (termSlug) {
-    return subjectService.getOers(termSlug);
-  };
-
   $scope.subjectConfig = {
-    options: $scope.subjectOptions,
+    options: oerService.getOers(),
     create: false, // Don't allow to create new tags
     openOnFocus: true,
     selectOnTab: true,

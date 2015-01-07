@@ -41,8 +41,8 @@
           </li>
         </ul>
       </div>
-      <div class="sub-sidebar" ng-show="selectedSidebar">
-        <div ng-repeat="term in terms" ng-show="selectedSidebar === term.slug">
+      <div class="sub-sidebar" ng-if="selectedSidebar">
+        <div ng-repeat="term in terms" ng-if="selectedSidebar === term.slug">
           <ul class="sidebar-list">
             <li>
               <div class="clickable" ng-class="{'active': term.slug === selectedSidebar && !subjectSlug}">
@@ -55,10 +55,10 @@
                 <a href="#" class="close" ng-click="editForm(subject.slug)" ng-hide="showEdit === subject.slug"></a>
               </div>
 
-              <form class="sidebar-edit subject-edit" ng-show="showEdit === subject.slug">
+              <form class="sidebar-edit subject-edit" ng-if="showEdit === subject.slug">
                 <div class="field">
                   <label for="name">Oercode</label>
-                  <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions(term.slug)" ng-model="subject.name">
+                    <selectize config="subjectConfig" placeholder="Selecteer oercode" ng-model="subject.name">
                 </div>
                 <div class="field">
                   <label for="description">Omschrijving</label>
@@ -79,10 +79,10 @@
 
           <a href="#" ng-click="addForm()" class="sidebar-add-icon" ng-class="{'close' : showAdd}"><span>+</span></a>
 
-          <form class="sidebar-edit subject-add" ng-show="showAdd === true">
+          <form class="sidebar-edit subject-add" ng-if="showAdd === true">
             <div class="field">
               <label for="name">Oercode</label>
-              <selectize config="subjectConfig" placeholder="Selecteer oercode" options="subjectOptions(term.slug)" ng-model="newSubject.name">
+              <selectize config="subjectConfig" placeholder="Selecteer oercode" ng-model="newSubject.name">
             </div>
             <div class="field">
               <label for="description">Omschrijving</label>
