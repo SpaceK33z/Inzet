@@ -60,13 +60,13 @@
             </div>
           </li>
           <li ng-if="loginGroup === 'team'">
-            <div class="clickable" ng-class="{'active': selectedSidebar}">
-              <a href="/p9">Periodes</a>
+            <div class="clickable" ng-class="{'active': locationPath === '/teachers'}">
+              <a href="/teachers">Docenten</a>
             </div>
           </li>
           <li ng-if="loginGroup === 'team'">
-            <div class="clickable" ng-class="{'active': locationPath === '/teachers'}">
-              <a href="/teachers">Docenten</a>
+            <div class="clickable" ng-class="{'active': selectedSidebar}">
+              <a href="/p9">Periodes</a>
             </div>
           </li>
           <li ng-if="loginGroup === 'blok'" ng-repeat-start="term in terms" ng-repeat-end>
