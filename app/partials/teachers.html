@@ -1,17 +1,21 @@
 <h1>Docenten</h1>
 
-<table ng-table="tableParams" class="table table-select">
+<table ng-table="tableParams" class="table table-select" style="width:95%">
   <tr ng-repeat="teacher in $data">
     <td data-title="'Naam'" sortable="'name'" class="shrink">
       <strong>{{teacher.name}}</strong>
     </td>
-    <td data-title="'Inzet'"  class="expand">
+    <td data-title="'Inzet'" class="expand">
       <div class="bar">
-        <div class="bar-fill" ng-repeat="subjectAll in getSubjectsFromTeacher(teacher.name)" ng-style="{'width': (getTeacherHoursOfSubject(subjectAll.term_slug, subjectAll.slug, teacher.name) / teacher.max_hours) * 100 + '%'}">
+        <div class="bar-fill green" ng-repeat="subjectAll in getSubjectsFromTeacher(teacher.name)" ng-style="{'width': (getTeacherHoursOfSubject(subjectAll.term_slug, subjectAll.slug, teacher.name) / teacher.max_hours) * 100 + '%'}" ng-class="{'red': getTeacherHoursRemaining(teacher.name) < 0}">
           <a href="/{{subjectAll.term_slug}}/{{subjectAll.slug}}">{{subjectAll.name[0]}}</a>
         </div>
-        <div class="bar-remaining">
+        <div class="bar-remaining" ng-if="getTeacherHoursRemaining(teacher.name) >= 0">
           {{getTeacherHoursRemaining(teacher.name)}}
+        </div>
+
+        <div class="bar-remaining" ng-if="getTeacherHoursRemaining(teacher.name) < 0">
+          +{{(getTeacherHoursRemaining(teacher.name) * -1)}}
         </div>
       </div>
       <div class="bar-numbers">
