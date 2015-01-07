@@ -6,7 +6,8 @@ var app = angular.module('inzetApp', [
   'ngRoute',
   'ngAnimate',
   'selectize',
-  'ngTable'
+  'ngTable',
+  'ngCookies'
 ]);
 
 app.config(function($routeProvider, $locationProvider, $httpProvider) {
@@ -35,6 +36,14 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 
   // We don't want no fake hashbangs we want the real shite
   $locationProvider.html5Mode(true);
+});
+
+app.run(function($rootScope, $cookies) {
+  if (!$cookies.group) {
+    window.location = '/login.html';
+  }
+
+  $rootScope.loginGroup = $cookies.group;
 });
 
 

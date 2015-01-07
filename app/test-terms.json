@@ -3,6 +3,7 @@
     "name": "P9",
     "slug": "p9",
     "hours": 500,
+    "owner": "Gaffert, Judith",
     "subjects": [
       {
         "name": ["PHP32"],
@@ -22,6 +23,7 @@
     "name": "P10",
     "slug": "p10",
     "hours": 300,
+    "owner": "Renate, Oosten",
     "subjects": [
       {
         "name": ["PHP32"],

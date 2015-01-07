@@ -1,7 +1,6 @@
-appCtrls.controller('MainCtrl', function($scope, userService, $location, $route, $routeParams, $http, subjectService, teacherService, oerService) {
+appCtrls.controller('MainCtrl', function($scope, userService, $rootScope, $location, $route, $routeParams, $http, subjectService, teacherService, oerService) {
   $scope.username = userService.getName() || 'Bart';
   $scope.locationPath = $location.path();
-
 
   // Change the selected sidebar when the route parameters change.
   $scope.$on('$routeChangeSuccess', function (ev, current, prev) {

@@ -20,6 +20,7 @@
   <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/angular-selectize2/dist/selectize.js"></script>
   <script src="bower_components/ng-table/ng-table.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
   <!-- endbuild -->
   <!-- build:js js/bigapp.min.js -->
   <script src="js/app.js"></script>
@@ -57,14 +58,21 @@
               <a href="/">Dashboard</a>
             </div>
           </li>
-          <li ng-repeat-start="term in terms" ng-repeat-end>
+          <li ng-if="loginGroup === 'team'">
+            <div class="clickable" ng-class="{'active': selectedSidebar}">
+              <a href="/p9">Periodes</a>
+            </div>
+          </li>
+          <li ng-if="loginGroup === 'blok'" ng-repeat-start="term in terms" ng-repeat-end>
             <div class="clickable" ng-class="{'active': term.slug === selectedSidebar}">
               <a ng-href="{{term.slug}}">{{term.name}}</a>
             </div>
           </li>
         </ul>
       </div>
-      <div class="sub-sidebar" ng-if="selectedSidebar">
+
+      <!-- BLOKEIGENAREN -->
+      <div class="sub-sidebar" ng-if="loginGroup === 'blok' && selectedSidebar">
         <div ng-repeat="term in terms" ng-if="selectedSidebar === term.slug">
           <ul class="sidebar-list">
             <li>
@@ -116,6 +124,21 @@
           </form>
         </div>
       </div>
+
+      <!-- TEAMLEIDERS -->
+      <div class="sub-sidebar" ng-if="loginGroup === 'team' && selectedSidebar">
+        <ul class="sidebar-list" ng-repeat="term in terms">
+          <li>
+            <div class="clickable" ng-class="{'active': term.slug === selectedSidebar}">
+              <a ng-href="{{term.slug}}">{{term.name}}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="sub-sidebar" ng-if="loginGroup === 'team' && selectedSidebar">
+
+      </div>
+
       <div class="content">
         <ng-view></ng-view>
       </div>

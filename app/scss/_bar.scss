@@ -35,10 +35,19 @@
   }
 }
 
+
 .bar-numbers {
   display: flex;
   justify-content: space-between;
   margin-bottom: 32px;
+}
+
+table .bar-numbers {
+  margin: 0;
+}
+
+table .bar {
+  margin-top: 20px;
 }
 
 .bar-remaining {

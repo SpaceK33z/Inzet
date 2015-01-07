@@ -1,6 +1,16 @@
 table {
   width: 100%;
+
+  .shrink {
+    white-space: nowrap;
+  }
+
+  .expand {
+    width: 80%;
+  }
 }
+
+
 
 .ng-table-pager {
   display: none;

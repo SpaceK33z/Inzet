@@ -9,7 +9,7 @@
   <base href="/">
 
   <link rel="stylesheet" href="css/app.css">
-  
+
   <link rel="icon" href="/favicon.ico">
 
 </head>
@@ -34,6 +34,18 @@
   <script>
     $('.login').on('submit', function(e) {
       e.preventDefault();
+
+      var username = $('#username').val(),
+        group;
+
+      if (username === 'Judith') {
+        group = 'blok';
+      }
+      else {
+        group = 'team';
+      }
+
+      document.cookie = 'group=' + group;
 
       window.location = '/';
     });
