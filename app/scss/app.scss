@@ -32,7 +32,7 @@ header {
   display: flex;
   box-shadow: $overlapping;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .container {
@@ -47,7 +47,7 @@ header {
   background: #f9f9f9;
   overflow-y: scroll;
   position: relative;
-  z-index: 1;
+  z-index: 4;
   box-shadow: $overlapping;
 
   @media screen and (max-width: $break-small) {
