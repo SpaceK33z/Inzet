@@ -75,4 +75,10 @@ appCtrls.controller('MainCtrl', function($scope, userService, $rootScope, $locat
     searchField: ['value'],
     maxItems: 1
   };
+
+  if ($rootScope.loginGroup === 'team') {
+    $scope.getTerm = function (termSlug) {
+      return subjectService.getTerm(termSlug);
+    };
+  }
 });

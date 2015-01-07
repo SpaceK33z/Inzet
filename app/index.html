@@ -126,7 +126,7 @@
       </div>
 
       <!-- TEAMLEIDERS -->
-      <div class="sub-sidebar" ng-if="loginGroup === 'team' && selectedSidebar">
+      <div class="sub-sidebar sub-sidebar-small" ng-if="loginGroup === 'team' && selectedSidebar">
         <ul class="sidebar-list" ng-repeat="term in terms">
           <li>
             <div class="clickable" ng-class="{'active': term.slug === selectedSidebar}">
@@ -135,8 +135,19 @@
           </li>
         </ul>
       </div>
-      <div class="sub-sidebar" ng-if="loginGroup === 'team' && selectedSidebar">
-
+      <div class="sub-sidebar sub-sidebar-small" ng-if="loginGroup === 'team' && selectedSidebar">
+        <ul class="sidebar-list">
+          <li>
+            <div class="clickable" ng-class="{'active': !subjectSlug}">
+              <a ng-href="{{selectedSidebar}}" class="sidebar-overview">Overzicht</a>
+            </div>
+          </li>
+          <li ng-repeat-start="subject in getTerm(selectedSidebar).subjects" ng-repeat-end>
+            <div class="clickable" ng-class="{'active': subject.slug === subjectSlug}">
+              <a ng-href="{{selectedSidebar}}/{{subject.slug}}">{{subject.name[0]}}</a>
+            </div>
+          </li>
+        </ul>
       </div>
 
       <div class="content">
