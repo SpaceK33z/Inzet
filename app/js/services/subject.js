@@ -27,13 +27,14 @@ appServices.factory('subjectService', function($http, $q, oerService) {
       return output;
     },
     newSubject: function(index, data) {
-      var slug = data.name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+      var slug = data.name[0].toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 
       subjectData[index].subjects.push({
         name: data.name,
         slug: slug,
         description: data.description,
         hours: data.hours,
+        term_slug: data.term_slug,
         teachers: []
       });
     },
@@ -139,6 +140,21 @@ appServices.factory('subjectService', function($http, $q, oerService) {
             });
           });
         }
+      });
+
+      return output;
+    },
+    getSubjectsFromTeacher: function(teacherName) {
+      var output = [];
+
+      subjectData.forEach(function(term) {
+        term.subjects.forEach(function(subject) {
+          subject.teachers.forEach(function(teacher) {
+            if (teacher.name === teacherName) {
+              output.push(subject);
+            }
+          });
+        });
       });
 
       return output;

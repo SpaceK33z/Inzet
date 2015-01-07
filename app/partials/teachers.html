@@ -1,0 +1,24 @@
+<h1>Docenten</h1>
+
+<table ng-table="tableParams" class="table table-select">
+  <tr ng-repeat="teacher in $data">
+    <td data-title="'Naam'" sortable="'name'" class="shrink">
+      <strong>{{teacher.name}}</strong>
+    </td>
+    <td data-title="'Inzet'"  class="expand">
+      <div class="bar">
+        <div class="bar-fill" ng-repeat="subjectAll in getSubjectsFromTeacher(teacher.name)" ng-style="{'width': (getHoursOfSubject(subject.term_slug, subjectAll.slug) / teacher.max_hours) * 100 + '%'}" ng-hide="getHoursOfSubject(subject.term_slug, subjectAll.slug) === 0">
+          <!-- TODO: get term -->
+          <a href="/p9/{{subjectAll.slug}}">{{subjectAll.name[0]}}</a>
+        </div>
+        <div class="bar-remaining">
+          {{getTermHoursRemaining(subject.term_slug)}}
+        </div>
+      </div>
+      <div class="bar-numbers">
+        <div class="bar-min">0</div>
+        <div class="bar-max">{{termpje.hours}}</div>
+      </div>
+    </td>
+  </tr>
+</table>

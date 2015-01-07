@@ -29,6 +29,7 @@
   <script src="js/controllers/dashboard.js"></script>
   <script src="js/controllers/subject.js"></script>
   <script src="js/controllers/term.js"></script>
+  <script src="js/controllers/teacher.js"></script>
 
   <script src="js/services/user.js"></script>
   <script src="js/services/subject.js"></script>
@@ -61,6 +62,11 @@
           <li ng-if="loginGroup === 'team'">
             <div class="clickable" ng-class="{'active': selectedSidebar}">
               <a href="/p9">Periodes</a>
+            </div>
+          </li>
+          <li ng-if="loginGroup === 'team'">
+            <div class="clickable" ng-class="{'active': locationPath === '/teachers'}">
+              <a href="/teachers">Docenten</a>
             </div>
           </li>
           <li ng-if="loginGroup === 'blok'" ng-repeat-start="term in terms" ng-repeat-end>

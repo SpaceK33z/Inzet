@@ -8,12 +8,14 @@
       {
         "name": ["PHP32"],
         "slug": "php32",
+        "term_slug": "p9",
         "description": "Programmeren",
         "teachers": []
       },
       {
         "name": ["MMD32"],
         "slug": "mmd32",
+        "term_slug": "p9",
         "description": "Moving Media Design",
         "teachers": []
       }
@@ -28,12 +30,14 @@
       {
         "name": ["PHP32"],
         "slug": "php32",
+        "term_slug": "p10",
         "description": "Programmeren",
         "teachers": []
       },
       {
         "name": ["WD32"],
         "slug": "wd32",
+        "term_slug": "p10",
         "description": "Web Design",
         "teachers": []
       }

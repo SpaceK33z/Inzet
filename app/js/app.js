@@ -25,6 +25,10 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
         window.location = path;
       }
     })
+    .when('/teachers', {
+      templateUrl: 'partials/teachers.html',
+      controller: 'TeacherCtrl'
+    })
     .when('/:term', {
       templateUrl: 'partials/term.html',
       controller: 'TermCtrl'
