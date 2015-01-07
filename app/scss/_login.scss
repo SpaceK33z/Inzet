@@ -1,19 +1,29 @@
 .login-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: #F9F9F9;
 }
 
 .login {
   width: 100%;
-  max-width: 11em;
-  display: flex;
-  flex-direction: column;
+  max-width: 18em;
+  display: block;
+  padding: 1.2rem 2rem 2rem;
+  box-shadow: $overlapping;
+  background: $white;
+  margin-bottom: 5rem;
 
   h1 {
     align-self: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   input[type="submit"] {
+    margin-top: .2rem;
     width: 100%;
   }
 }
