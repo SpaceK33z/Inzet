@@ -1,6 +1,5 @@
 appCtrls.controller('TeacherCtrl', function($scope, $route, $filter, ngTableParams, $http, subjectService, teacherService) {
   teacherService.getTeachers().then(function(payload) {
-    console.log(payload);
     $scope.tableParams = new ngTableParams({
       count: payload.length,
       sorting: {
@@ -18,6 +17,14 @@ appCtrls.controller('TeacherCtrl', function($scope, $route, $filter, ngTablePara
 
   $scope.getSubjectsFromTeacher = function (teacherName) {
     return subjectService.getSubjectsFromTeacher(teacherName);
+  };
+
+  $scope.getTeacherHoursRemaining = function (teacherName) {
+    return teacherService.getFreeHours(teacherName);
+  };
+
+  $scope.getTeacherHoursOfSubject = function (termSlug, subjectSlug, teacherName) {
+    return subjectService.getTeacherHoursOfSubject(termSlug, subjectSlug, teacherName);
   };
 
 });

@@ -158,6 +158,24 @@ appServices.factory('subjectService', function($http, $q, oerService) {
       });
 
       return output;
+    },
+    getTeacherHoursOfSubject: function(termSlug, subjectSlug, teacherName) {
+      var output = 0;
+
+      subjectData.forEach(function(term) {
+        if (term.slug === termSlug) {
+          term.subjects.forEach(function(subject) {
+            if (subject.slug === subjectSlug) {
+              subject.teachers.forEach(function(teacher) {
+                if (teacher.name === teacherName) {
+                  output = teacher.hours;
+                }
+              });
+            }
+          });
+        }
+      });
+      return output;
     }
   };
 });
