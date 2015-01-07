@@ -3,7 +3,7 @@
   <span class="subtitle">{{subject.description}}</span>
 </p>
 <div class="bar">
-  <div class="bar-fill" ng-repeat="subjectAll in term.subjects" ng-style="{'width': (getHoursOfSubject(subjectAll.slug) / term.hours) * 100 + '%'}" ng-class="{'active': subjectAll.name[0] === subject.name[0]}" ng-hide="getHoursOfSubject(subjectAll.slug) === 0">{{subjectAll.name[0]}}</div>
+  <div class="bar-fill" ng-repeat="subjectAll in term.subjects" ng-style="{'width': (getHoursOfSubject(subjectAll.slug) / term.hours) * 100 + '%'}" ng-class="{'active': subjectAll.name[0] === subject.name[0]}" ng-hide="getHoursOfSubject(subjectAll.slug) === 0"><a href="/{{term.slug}}/{{subjectAll.slug}}">{{subjectAll.name[0]}}</a></div>
   <div class="bar-remaining">
     {{getTermHoursRemaining()}}
   </div>
