@@ -125,4 +125,8 @@
 
 .sub-sidebar-small {
   width: 7rem;
+
+  &:nth-child(3) {
+    z-index: -1;
+  }
 }
