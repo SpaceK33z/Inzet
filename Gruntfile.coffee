@@ -87,7 +87,7 @@ module.exports = (grunt) ->
         rename: false
       assets:
         files: [
-          src: ["dist/index.html"]
+          src: ["dist/index.html", "dist/login.html"]
         ]
 
     connect:
