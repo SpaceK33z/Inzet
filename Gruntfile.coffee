@@ -74,7 +74,7 @@ module.exports = (grunt) ->
 
       production:
         options:
-          remote: "git@bitbucket.org:spacek33z/inzet.git"
+          remote: "git@github.com:spacek33z/inzet.git"
           branch: "production"
 
     cacheBust:
