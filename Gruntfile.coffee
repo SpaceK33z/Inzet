@@ -136,4 +136,4 @@ module.exports = (grunt) ->
         path: path.resolve() + "/dist"
 
   grunt.registerTask "default", ["compass", "autoprefixer", "connect:app", "open:app", "watch"]
-  grunt.registerTask "publish", ["clean:dist", "useminPrepare", "copy:dist", "concat", "uglify", "usemin", "cacheBust", "buildcontrol", "open:dist", "connect:dist"]
+  grunt.registerTask "publish", ["clean:dist", "useminPrepare", "copy:dist", "concat", "uglify", "cssmin", "usemin", "cacheBust", "buildcontrol", "open:dist", "connect:dist"]
