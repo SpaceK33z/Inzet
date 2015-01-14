@@ -25,7 +25,7 @@
       {{getFreeHours(user.name)}}
     </td>
     <td data-title="'Uren toebedeeld'">
-      <input type="number" min="0" ng-show="!!getTeacher(user.name)" ng-model="getTeacher(user.name).hours" ng-change="changeHour(user.name, getTermHoursRemaining())">
+      <input type="number" min="0" ng-show="!!getTeacher(user.name)" ng-model="getTeacher(user.name).hours" ng-change="changeHour(user.name, getTermHoursRemaining())" class="teacher-hours-input" ng-keypress="focusOut($event)">
     </td>
   </tr>
 </table>

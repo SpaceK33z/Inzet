@@ -66,4 +66,10 @@ appCtrls.controller('SubjectCtrl', function($scope, $route, $filter, ngTablePara
     }
   };
 
+  $scope.focusOut = function (event) {
+    if (event.charCode === 13) {
+      $('.teacher-hours-input').blur();
+    }
+  };
+
 });
