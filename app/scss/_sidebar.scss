@@ -60,7 +60,9 @@
   }
 
   .active {
-    &:before
+    form {
+      background: red;
+    }
 
     .close {
       background: url('/img/pencil-white.svg') no-repeat center center;
