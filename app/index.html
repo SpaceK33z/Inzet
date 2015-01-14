@@ -104,13 +104,11 @@
                   <input type="text" id="description" ng-model="subject.description">
                 </div>
 
-                <!-- <div class="editcontrols"> -->
-                  <!-- <a href="#" class="delete" ng-click="removeSubject(term.slug, subject)">-</a>
- -->
-                  <input type="button" value="Verwijderen" ng-click="removeSubject(term.slug, subject)">
+                <div class="editcontrols">
+                  <input type="button" value="&times;" ng-click="removeSubject(term.slug, subject)">
 
                   <input type="submit" value="Opslaan" ng-click="editForm(subject.slug)">
-                <!-- </div> -->
+                </div>
               </form>
             </li>
           </ul>

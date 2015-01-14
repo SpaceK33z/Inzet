@@ -61,11 +61,32 @@
 
   .active {
     form {
-      background: red;
+      background: #773C77;
+      color: white;
+
+      input[type="submit"], input[type="button"] {
+        color: white;
+        border-width: 1px;
+
+        &:hover {
+          color: tint($fontyspaars, 70%);
+        }
+      }
+
+      input[type="text"]{
+        color: $black;
+      }
     }
 
     .close {
       background: url('/img/pencil-white.svg') no-repeat center center;
+      
+      &.ng-hide {
+        display: block !important;
+        visibility: visible;
+        background-image: url('/img/pencil-coloured-white.svg');
+      }
+
     }
   }
 }
@@ -108,23 +129,24 @@
   margin-top: -2.8rem;
   display: flex;
   flex-direction: column;
-
-  .delete {
-    background: $red;
-    width: 1rem;
-    display: block;
-    flex: 0;
-  }
-
+  
+  // Delete description
   input[type="button"] {
+    width: 2.8rem;
+
     &:hover {
       color: $red;
     }
   }
 
+  // Save description
   input[type="submit"] {
-    margin-top: 1rem;
-    //flex: 1;
+    width: 100%;
+    margin-left: .5rem;
+
+    @media screen and (max-width: $break-small) {
+      font-size: .8rem;
+    }
   }
 
 }
