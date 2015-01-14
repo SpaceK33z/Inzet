@@ -18,6 +18,13 @@
         "term_slug": "p9",
         "description": "Moving Media Design",
         "teachers": []
+      },
+      {
+        "name": ["UT32"],
+        "slug": "ut32",
+        "term_slug": "p9",
+        "description": "User Testing",
+        "teachers": []
       }
     ]
   },
@@ -28,17 +35,60 @@
     "owner": "Renate, Oosten",
     "subjects": [
       {
-        "name": ["PHP32"],
-        "slug": "php32",
+        "name": ["PHP41"],
+        "slug": "php41",
         "term_slug": "p10",
         "description": "Programmeren",
         "teachers": []
       },
       {
-        "name": ["WD32"],
-        "slug": "wd32",
+        "name": ["DV41"],
+        "slug": "dv41",
+        "term_slug": "p10",
+        "description": "Datavisualisatie",
+        "teachers": []
+      },
+      {
+        "name": ["SAM41"],
+        "slug": "sam41",
+        "term_slug": "p10",
+        "description": "Samenwerken",
+        "teachers": []
+      },
+      {
+        "name": ["WD41"],
+        "slug": "wd41",
         "term_slug": "p10",
         "description": "Web Design",
+        "teachers": []
+      }
+    ]
+  },
+  {
+    "name": "P11",
+    "slug": "p11",
+    "hours": 300,
+    "owner": "Renate, Oosten",
+    "subjects": [
+      {
+        "name": ["STO42"],
+        "slug": "sto42",
+        "term_slug": "p11",
+        "description": "Storytelling",
+        "teachers": []
+      },
+      {
+        "name": ["PTM42"],
+        "slug": "ptm42",
+        "term_slug": "p11",
+        "description": "Proftaak",
+        "teachers": []
+      },
+      {
+        "name": ["PPM42"],
+        "slug": "ppm42",
+        "term_slug": "p11",
+        "description": "Professionele Ontwikkeling",
         "teachers": []
       }
     ]
