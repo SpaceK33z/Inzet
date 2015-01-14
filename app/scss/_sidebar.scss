@@ -58,6 +58,14 @@
       background-image: url('/img/pencil-coloured.svg');
     }
   }
+
+  .active {
+    &:before
+
+    .close {
+      background: url('/img/pencil-white.svg') no-repeat center center;
+    }
+  }
 }
 
 .sidebar-add-icon {
