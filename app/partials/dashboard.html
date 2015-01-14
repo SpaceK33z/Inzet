@@ -1,4 +1,4 @@
-<h1>To-Do</h1>
+<h1>Dashboard</h1>
 
 <!-- TEAMLEIDER -->
 <div ng-if="loginGroup === 'team'">
@@ -35,24 +35,32 @@
     <h2>{{term.name}}</h2>
 
     <table ng-table="tableParams(term.slug)" class="table table-select">
-      <tr ng-repeat="subject in $data" ng-if="checkZero(subject)">
+      <tr ng-repeat="subject in $data">
         <td data-title="'Vak'" sortable="'name'">
           <a href="/{{term.slug}}/{{subject.slug}}">
             {{subject.name[0]}}
           </a>
         </td>
-        <td data-title="'Docenten'">
-          <div ng-repeat="teacher in subject.teachers" ng-if="teacher.hours === 0">
-            {{teacher.name}}
+        <td data-title="'Docenten (vrije uren)'">
+          <div ng-repeat="teacher in subject.teachers" class="flex-around">
+            <span>
+              {{teacher.name}}
+            </span>
+            <span>
+              ({{getFreeTeacherHours(teacher.name)}})
+            </span>
           </div>
           <div ng-if="!subject.teachers.length">
             <a href="/{{term.slug}}/{{subject.slug}}" class="button">Kies een docent</a>
           </div>
         </td>
         <td data-title="'Uren'">
-          <div ng-repeat="teacher in subject.teachers">
+          <div ng-repeat="teacher in subject.teachers" class="center">
             <span ng-if="teacher.hours === 0">
               <a href="/{{term.slug}}/{{subject.slug}}" class="button">Deel uren in</a>
+            </span>
+            <span ng-if="teacher.hours > 0">
+              {{teacher.hours}}
             </span>
           </div>
           <div ng-if="!subject.teachers.length">

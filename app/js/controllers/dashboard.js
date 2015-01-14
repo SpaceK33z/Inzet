@@ -1,4 +1,4 @@
-appCtrls.controller('DashboardCtrl', function($scope, $rootScope, userService, $filter, $location, ngTableParams, $http, subjectService) {
+appCtrls.controller('DashboardCtrl', function($scope, $rootScope, userService, $filter, $location, ngTableParams, $http, subjectService, teacherService) {
   $scope.terms = subjectService.getTermsRealtime();
 
   // TEAMLEIDER
@@ -49,22 +49,8 @@ appCtrls.controller('DashboardCtrl', function($scope, $rootScope, userService, $
       });
     };
 
-    // No teacher in subjects or teachers without hours
-    $scope.checkZero = function (subject) {
-      var output = false;
-
-      if (!subject.teachers.length) {
-        output = true;
-      }
-      else {
-        subject.teachers.forEach(function(teacher) {
-          if (teacher.hours === 0) {
-            output = true;
-          }
-        });
-      }
-
-      return output;
+    $scope.getFreeTeacherHours = function (teacherName) {
+      return teacherService.getFreeHours(teacherName);
     };
 
   }

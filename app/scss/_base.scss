@@ -20,6 +20,15 @@ ng-view {
   }
 }
 
+.flex-around {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center {
+  text-align: center;
+}
+
 // Angular stuff, probably not necessary
 [ng\:cloak],
 [ng-cloak],
