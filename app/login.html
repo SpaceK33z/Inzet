@@ -47,7 +47,11 @@
         group = 'team';
       }
 
-      document.cookie = 'group=' + group;
+      group = escape(group) + ";";
+      username = escape(username) + ";";
+
+      document.cookie = "group=" + group;
+      document.cookie = "username=" + username;
 
       window.location = '/';
     });

@@ -48,6 +48,7 @@ app.run(function($rootScope, $cookies) {
   }
 
   $rootScope.loginGroup = $cookies.group;
+  $rootScope.loginUser = $cookies.username;
 });
 
 
