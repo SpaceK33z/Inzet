@@ -1,16 +1,30 @@
 .dashboard {
-	.button {
-		background: $blue;
-		color: $white;
-		text-align: center;
-		display: block;
-		padding: .35rem .5rem;
+  margin-bottom: 80px;
 
-		&:hover {
-			background: tint($blue, 12%);
-		}
-		&:active {
-			background: shade($blue, 20%);
-		}
-	}
+  .button {
+    background: $blue;
+    color: $white;
+    text-align: center;
+    display: block;
+    padding: .35rem .5rem;
+
+    &:hover {
+      background: tint($blue, 12%);
+    }
+
+    &:active {
+      background: shade($blue, 20%);
+    }
+  }
+}
+
+.term-info {
+  h2 {
+    margin-right: 20px;
+  }
+
+  .bar-wrapper {
+    width: 100%;
+    margin-top: 12px;
+  }
 }

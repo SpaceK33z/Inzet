@@ -56,6 +56,10 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 32px;
+
+  &.small {
+    margin-bottom: 15px;
+  }
 }
 
 table .bar-numbers {

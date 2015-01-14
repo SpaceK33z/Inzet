@@ -32,7 +32,23 @@
 <!-- BLOKEIGENAAR -->
 <div ng-if="loginGroup === 'blok'">
   <div ng-repeat="term in terms" class="dashboard">
-    <h2>{{term.name}}</h2>
+    <div class="flex-around term-info">
+      <h2>{{term.name}}</h2>
+
+      <div class="bar-wrapper">
+        <div class="bar">
+          <div class="bar-fill" ng-repeat="subjectAll in term.subjects" ng-style="{'width': (getHoursOfSubject(term.slug, subjectAll.slug) / term.hours) * 100 + '%'}" ng-hide="getHoursOfSubject(term.slug, subjectAll.slug) === 0"><a href="/{{term.slug}}/{{subjectAll.slug}}">{{subjectAll.name[0]}}</a></div>
+          <div class="bar-remaining">
+            {{getTermHoursRemaining(term.slug)}}
+          </div>
+        </div>
+
+        <div class="bar-numbers small">
+          <div class="bar-min">0</div>
+          <div class="bar-max">{{term.hours}}</div>
+        </div>
+      </div>
+    </div>
 
     <table ng-table="tableParams(term.slug)" class="table table-select">
       <tr ng-repeat="subject in $data">

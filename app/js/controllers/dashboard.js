@@ -20,14 +20,17 @@ appCtrls.controller('DashboardCtrl', function($scope, $rootScope, userService, $
       });
     };
 
-    $scope.getTermHoursRemaining = function (termSlug) {
-      return subjectService.getTermHoursRemaining(termSlug);
-    };
 
-    $scope.getHoursOfSubject = function (termSlug, subjectSlug) {
-      return subjectService.getSubjectHours(termSlug, subjectSlug);
-    };
   }
+
+  // SHARED SCOPES
+  $scope.getTermHoursRemaining = function (termSlug) {
+    return subjectService.getTermHoursRemaining(termSlug);
+  };
+
+  $scope.getHoursOfSubject = function (termSlug, subjectSlug) {
+    return subjectService.getSubjectHours(termSlug, subjectSlug);
+  };
 
   // BLOKEIGENAAR
   if ($rootScope.loginGroup === 'blok') {
